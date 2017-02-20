@@ -2,6 +2,9 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+// use environment variable to set dynamic port for heroku deployment
+const port = process.env.PORT || 3000;
+
 // just call the express() method to create an app
 const app = express();
 
@@ -69,6 +72,7 @@ app.get('/bad', (req, res) => {
   });
 });
 // listen on localhost port 3000
-app.listen(3000, () => {
-  console.log('Server is active on port 3000');
+// use environment variable to set dynamic port for heroku deployment
+app.listen(port, () => {
+  console.log(`Server is active on port: ${port}`);
 });
