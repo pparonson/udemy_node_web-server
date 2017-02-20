@@ -65,6 +65,13 @@ app.get('/about', (req, res) => {
   });
 });
 
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    pageTitle: 'Projects Page',
+    bodyMessage: 'Portfolio page here',
+  });
+});
+
 // bad; send back JSON with error message property: "Error handling request"
 app.get('/bad', (req, res) => {
   res.send({
